@@ -11,7 +11,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 module.exports = {
   output: {
     uniqueName: "mfeAppA",
-    publicPath: "auto",
+    publicPath: "http://localhost:3002/", // change when in production
   },
   optimization: {
     runtimeChunk: false,
@@ -22,17 +22,17 @@ module.exports = {
     },
   },
   experiments: {
-    outputModule: true,
+    outputModule: false,
   },
   plugins: [
     new ModuleFederationPlugin({
-      library: { type: "module" },
+      // library: { type: "module" },
 
       // For remotes (please adjust)
       name: "mfeAppA",
       filename: "remoteEntry.js",
       exposes: {
-        "./MFEAppA": ".//src/app/app.component.ts",
+        "./MFEAppA": ".//src/main.single-spa.ts",
       },
 
       // For hosts (please adjust)
