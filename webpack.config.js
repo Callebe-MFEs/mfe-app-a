@@ -11,7 +11,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 module.exports = {
   output: {
     uniqueName: "mfeAppA",
-    publicPath: "http://localhost:3002/", // change when in production
+    publicPath: "/mfe-app-a/", // change when in production
   },
   optimization: {
     runtimeChunk: false,
