@@ -7,7 +7,7 @@ COPY nginx /etc/nginx
 
 RUN touch ./off \
   && chmod o+rw ./off \
-  && echo "micro-app-angular14: $COMMIT_SHA" >> /etc/nginx/commit.sha
+  && echo "mfe-app-a: $COMMIT_SHA" >> /etc/nginx/commit.sha
 
 WORKDIR /usr/static
 
