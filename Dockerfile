@@ -13,6 +13,6 @@ RUN touch ./off \
 
 WORKDIR /usr/static
 
-COPY ./dist/mfe-app-a .
+COPY ./dist .
 
 USER nginx
