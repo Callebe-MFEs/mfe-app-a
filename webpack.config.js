@@ -11,7 +11,7 @@ sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
 module.exports = {
   output: {
     uniqueName: "mfeAppA",
-    publicPath: "/mfe-app-a/", // change when in production
+    publicPath: "auto", // change when in production
   },
   optimization: {
     runtimeChunk: false,
@@ -22,11 +22,11 @@ module.exports = {
     },
   },
   experiments: {
-    outputModule: false,
+    outputModule: true,
   },
   plugins: [
     new ModuleFederationPlugin({
-      // library: { type: "module" },
+      library: { type: "module" },
 
       // For remotes (please adjust)
       name: "mfeAppA",
